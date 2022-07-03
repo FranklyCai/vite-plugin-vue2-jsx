@@ -10,14 +10,9 @@
   "engines": {
     "node": ">=12.0.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FranklyCai/vite-plugin-vue2-jsx.git"
-  },
   "bugs": {
-    "url": "https://github.com/FranklyCai/vite-plugin-vue2-jsx.git/issues"
+    "url": "https://github.com/FranklyCai/vite-plugin-vue2-jsx/issues"
   },
-  "homepage": "https://github.com/FranklyCai/vite-plugin-vue2-jsx.git#readme",
   "dependencies": {
     "@babel/core": "^7.17.9",
     "@babel/plugin-syntax-import-meta": "^7.10.4",
