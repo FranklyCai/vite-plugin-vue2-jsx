@@ -100,19 +100,27 @@ function vueJsxPlugin(options = {}) {
       // use id for script blocks in Vue SFCs (e.g. `App.vue?vue&type=script&lang.jsx`)
       // use filepath for plain jsx files (e.g. App.jsx)
       if (filter(id) || filter(filepath)) {
-        const plugins = [importMeta, [jsx, babelPluginOptions], ...babelPlugins]
+        const plugins = [
+          [require.resolve('@babel/plugin-proposal-decorators'), { legacy: true }],
+          [
+            require.resolve('@babel/plugin-proposal-class-properties'),
+            { loose: true },
+          ],
+        ]
+        // const plugins = [importMeta, [jsx, babelPluginOptions], ...babelPlugins]
         if (id.endsWith('.tsx') || filepath.endsWith('.tsx')) {
-          plugins.push([
+          plugins.unshift([
             require('@babel/plugin-transform-typescript'),
             // @ts-ignore
-            { isTSX: true, allowExtensions: true }
+            { isTSX: true, allowExtensions: true, allowDeclareFields: true }
           ])
         }
 
         const result = babel.transformSync(code, {
+          presets:['@vue/babel-preset-jsx'],
           babelrc: false,
           ast: true,
-          plugins,
+          plugins: plugins.concat(...babelPlugins),
           sourceMaps: needSourceMap,
           sourceFileName: id,
           configFile: false
