@@ -20,5 +20,20 @@
     "@rollup/pluginutils": "^4.2.0",
     "@vue/babel-plugin-transform-vue-jsx": "^1.2.1",
     "hash-sum": "^2.0.0"
-  }
+  },
+  "description": "提供Vue2的JSX和TSX支持（包括HMR） ```js // vite.config.js import vueJsx from 'vite-plugin-vue2-jsx'",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FranklyCai/vite-plugin-vue2-jsx.git"
+  },
+  "keywords": [
+    "vite",
+    "plugin",
+    "vue2",
+    "jsx"
+  ],
+  "homepage": "https://github.com/FranklyCai/vite-plugin-vue2-jsx#readme"
 }
